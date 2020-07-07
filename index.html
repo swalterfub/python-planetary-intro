@@ -18,25 +18,45 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section><h4></h4></section>
-				<section data-markdown>
-					#### 
-			    </section>
+				<section style="font-size: 0.6em; text-align: left;"><h4>Python for Planetary Science</h4><br><br>
+				<p>Sebastian Walter</p>
+				<p>Planetologie-Seminar</p>
+				<p>July 9, 2020</p>
+				<note> not an introduction to Python, if you are not familiar it will probably look scary and </note>
+				</section>
+<section data-markdown style="font-size: 0.6em; text-align: left;">
+#### Installation
+
+##### Conda package and environment manager
+
+(1) Download and install miniconda for your operating system https://docs.conda.io/en/latest/miniconda.html (Python 3.X)
+
+(2) Start a conda terminal and install modules:
+
+* create a stand alone environment
+        conda install -n tutorial
+* activates the environment
+        conda activate tutorial
+* install modules needed for this tutorial:
+        conda install -c conda-forge gdal jupyter matplotlib rasterio
+* every time you start up a new terminal remember to type:
+        conda activate tutorial
+</section>
 			</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
+		<!--<script src="plugin/highlight/highlight.js"></script>-->
 		<script src="plugin/zoom/zoom.js"></script>
 		<script>
 			Reveal.initialize({
 				transition: 'none',
 				hash: true,
-                center: false,
-                controls: true,
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+                		center: false,
+                		controls: true,
+				plugins: [ RevealMarkdown, RevealNotes, RevealZoom ]
 			});
 		</script>
 	</body>
