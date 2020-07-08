@@ -1,6 +1,6 @@
 /*!
 * reveal.js 1.0.0
-* https://github.com/swalterfub/oplunch-talk#readme
+* https://github.com/swalterfub/python-planetary-intro#readme
 * MIT licensed
 *
 * Copyright (C) 2020 Hakim El Hattab, https://hakim.se
