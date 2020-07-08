@@ -13,34 +13,68 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
 		<style>
+		.reveal .slides {
+			font-size: 0.6em;
+			text-align: left;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section style="font-size: 0.6em; text-align: left;"><h4>Python for Planetary Science</h4><br><br>
+				<section><h4>Introduction to Python for Planetary Science</h4><br><br>
+				<img src="2000px-Python.png" width="300" height="300" style="margin:20px 200px 20px 20px;">
+				<img src="outro_frame_0180.png" height="300">
 				<p>Sebastian Walter</p>
 				<p>Planetologie-Seminar</p>
 				<p>July 9, 2020</p>
-				<note> not an introduction to Python, if you are not familiar it will probably look scary and </note>
+				<aside class="notes"> not an introduction to Python, if you are not familiar it will probably look scary and </aside>
 				</section>
-<section data-markdown style="font-size: 0.6em; text-align: left;">
+<section data-markdown style="" data-separator-notes="^Note:">
+
+#### Python overview
+
+- Interpreted, high-level general-purpose programming language
+- First released in 1991
+- Emphasises code readability and simplicity by use of significant **whitespace** 
+- Multiple programming paradigms: structured, **object-oriented** and functional
+- Comprehensive standard library, large collection of additional libraries*
+    - numpy, gdal, matplotlib
+- Open!
+
+&nbsp;
+
+##### Syntax
+
+- No brackets to delimit blocks
+- Instead, whitespace indentation (visual structure represents semantic structure)
+        for x in range(0, 3):
+            print(x)
+
+##### Object-oriented
+
+- *Objects* can contain data **and** methods
+        myList = [1,2,3]
+        myList.append(4)
+
+Note: List is a compound data type
+</section>
+<section data-markdown style="">
 #### Installation
 
 ##### Conda package and environment manager
 
 (1) Download and install miniconda for your operating system https://docs.conda.io/en/latest/miniconda.html (Python 3.X)
 
-(2) Start a conda terminal and install modules:
-
+(2) Start a conda terminal and install modules:  
 * create a stand alone environment
-        conda install -n tutorial
+        conda create -n tutorial
 * activates the environment
         conda activate tutorial
 * install modules needed for this tutorial:
         conda install -c conda-forge gdal jupyter matplotlib rasterio
-* every time you start up a new terminal remember to type:
-        conda activate tutorial
+* start Jupyter:
+        jupyter notebook
 </section>
 			</div>
 		</div>
@@ -48,15 +82,15 @@
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
-		<!--<script src="plugin/highlight/highlight.js"></script>-->
+		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/zoom/zoom.js"></script>
 		<script>
 			Reveal.initialize({
 				transition: 'none',
 				hash: true,
-                		center: false,
-                		controls: true,
-				plugins: [ RevealMarkdown, RevealNotes, RevealZoom ]
+				center: false,
+				controls: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
 			});
 		</script>
 	</body>
