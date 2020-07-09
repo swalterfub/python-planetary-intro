@@ -28,54 +28,125 @@
 				<p>Sebastian Walter</p>
 				<p>Planetologie-Seminar</p>
 				<p>July 9, 2020</p>
-				<aside class="notes"> not an introduction to Python, if you are not familiar it will probably look scary and </aside>
+				<aside class="notes">
+The focus is not on how to learn programming with python, but how to use python for interactive data analysis and visualisation.
+In the way Matlab or IDL. 
+I'm actually not such an expert in this way of using python, I'm more using it for programming.
+But I think this could better serve as a start into Python for people studiyng or working in science
+If you dont understand something, please interrupt me</br></aside>
 				</section>
+<section>
 <section data-markdown style="" data-separator-notes="^Note:">
 
 #### Python overview
 
 - Interpreted, high-level general-purpose programming language
+
 - First released in 1991
+
 - Emphasises code readability and simplicity by use of significant **whitespace** 
+
 - Multiple programming paradigms: structured, **object-oriented** and functional
+
 - Comprehensive standard library, large collection of additional libraries*
-    - numpy, gdal, matplotlib
-- Open!
 
-&nbsp;
+- Open and freely available
 
-##### Syntax
+  https://www.python.org/
 
-- No brackets to delimit blocks
-- Instead, whitespace indentation (visual structure represents semantic structure)
-        for x in range(0, 3):
-            print(x)
+Note: The large amount of existing libraries is the main reason for its recent success in science. Plenty of modules available so you don't need to implement the methods yourself.
 
-##### Object-oriented
+And a major benefit is its free availablilty, so when you learn a programming language for example for your studies, you will be able to use it afterwards.
 
-- *Objects* can contain data **and** methods
-        myList = [1,2,3]
-        myList.append(4)
+So if you plan to start learning a programming language I strongly recommend to use a freely available one, and Python is a good candidate.
 
-Note: List is a compound data type
+Under this address you will find a download and after installation, you start the Python terminal
+
+</section>
+<section>
+<h4>Syntax</h4>
+</br>
+<ul>
+<li>No brackets to delimit blocks</li>
+</br>
+<li>Instead, whitespace indentation</li>
+<li style="list-style-type:none">(visual structure represents semantic structure)</li>
+</ul>
+</br>
+<pre><code class="python">>>> for x in range(0, 3):
+>>> x
+0
+1
+2
+</pre></code>
+</section>
+<section>
+<h4>Objects</h4>
+<ul>
+<li>In Python everything is an object</li>
+</br>
+<li>Objects can contain data and methods</li>
+<pre><code class="python">>>> myList = [1,2,3]
+>>> myList.append(4)
+>>> myList
+[1, 2, 3, 4]
+</pre></code>
+<aside class="notes">List is a compound data type. There are others like Dictionaries, Tuples</aside>
+</section>
+<section>
+<h4>Indexing and slicing</h4>
+<ul>
+<li>Index operator []</li>
+</ul>
+<pre><code class="python">>>> myList = ['a', 'b', 'c', 'd', 'e']
+
+>>> myList[0]
+
+'a'
+</pre></code>
+<ul>
+<li>A slice is a subset of list elements</li>
+</ul>
+<pre><code class="bash">>>> myList[1:3]
+
+['b','c']
+</pre></code>
 </section>
 <section data-markdown style="">
-#### Installation
+#### Important libraries / Modules
 
-##### Conda package and environment manager
+- SciPy "ecosystem"
+  - SciPy library - maths, science, engineering
+  - Numpy - n-dimensional arrays and computing tools
+  - Matplotlib - visualisation
+  - IPython / Jupyter
 
-(1) Download and install miniconda for your operating system https://docs.conda.io/en/latest/miniconda.html (Python 3.X)
+- RasterIO (GDAL)
 
-(2) Start a conda terminal and install modules:  
-* create a stand alone environment
-        conda create -n tutorial
-* activates the environment
-        conda activate tutorial
-* install modules needed for this tutorial:
-        conda install -c conda-forge gdal jupyter matplotlib scipy rasterio
-* start Jupyter:
-        jupyter notebook
 </section>
+</section>
+<section>
+<h4>Installation</h4>
+
+<h5>Conda package and environment manager</h5>
+
+<p>(1) Download and install miniconda for your operating system https://docs.conda.io/en/latest/miniconda.html (Python 3.X)</p>
+
+<p>(2) Start a conda terminal and install modules: </p> 
+
+<ul>
+<li>create a stand alone environment</li>
+<pre><code class="bash">conda create -n tutorial</pre></code>
+<li>activate the environment:</li>
+<pre><code class="bash">conda activate tutorial</pre></code>
+<li>install modules needed for this tutorial:</li>
+<pre><code class="bash">conda install -c conda-forge jupyter matplotlib scipy rasterio</pre></code>
+<li>start Jupyter:</li>
+<pre><code class="bash">jupyter notebook</pre></code>
+<aside class="notes">This is for Linux, for other OS there are graphical frontends available
+Advise: always crate a new environment, dont mess with the base environment</aside>
+</section>
+
 			</div>
 		</div>
 
@@ -86,6 +157,7 @@ Note: List is a compound data type
 		<script src="plugin/zoom/zoom.js"></script>
 		<script>
 			Reveal.initialize({
+				//disableLayout: true,
 				transition: 'none',
 				hash: true,
 				center: false,
